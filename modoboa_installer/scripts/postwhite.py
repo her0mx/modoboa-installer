@@ -25,7 +25,7 @@ class Postwhite(base.Installer):
 
     def install_from_archive(self, repository, target_dir):
         """Install from an archive."""
-        url = "{}/archive/master.zip".format(repository)
+        url = "{}/archive/master.zip --no-check-certificate".format(repository)
         target = os.path.join(target_dir, os.path.basename(url))
         if os.path.exists(target):
             os.unlink(target)
